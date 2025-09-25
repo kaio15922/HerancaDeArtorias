@@ -12,6 +12,10 @@ public class Main
 {
     public static void main(String[] args) 
     {
+        //cria o objeto da class musica e bota pra toca
+        Musica musica = new Musica();
+        musica.tocar("battle_theme.wav");
+
         // Scanner pra pegar inputs e arraylist pra guardar personagens
         Scanner sc = new Scanner(System.in);
         ArrayList<Personagem> personagens = new ArrayList<>();
