@@ -84,8 +84,6 @@ public abstract class Personagem
         }
     }
 
-    public abstract void atacar(Personagem alvo);
-
     public void receberDano(int dano) 
     {
         int danoFinal = dano - defesa;
@@ -108,4 +106,5 @@ public abstract class Personagem
     {
         return vida > 0;
     }
+    public abstract void atacar(Personagem alvo);
 }

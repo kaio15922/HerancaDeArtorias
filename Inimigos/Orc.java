@@ -3,7 +3,7 @@ package Inimigos;
 import java.util.Random;
 import Personagens.Personagem;
 
-public class Orc extends Inimigo
+public class Orc extends Personagem
 {
     public Orc(String nome) 
     {

@@ -2,12 +2,11 @@ package Combate;
 
 import java.util.Scanner;
 
-import Inimigos.Inimigo;
-import Personagens.Personagem;
+import Personagens.*;
 
 public class CombateSistema 
 {
-    public boolean combate(Personagem jogador, Inimigo inimigo, Scanner sc)
+    public boolean combate(Player jogador, Personagem inimigo, Scanner sc)
     {
         while (jogador.estaVivo() && inimigo.estaVivo()) 
         {
@@ -44,7 +43,9 @@ public class CombateSistema
             }
 
             System.out.println("\nVez do inimigo!");
-            inimigo.atacar(jogador);
+
+            //Jogador eh um Player, que por sua vez tem um personagem -> Parametro de atacar
+            inimigo.atacar(jogador.getPersonagem());
 
             if (!jogador.estaVivo()) 
             {

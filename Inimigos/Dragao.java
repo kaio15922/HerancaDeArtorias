@@ -4,7 +4,7 @@ import java.util.Random;
 
 import Personagens.Personagem;
 
-public class Dragao extends Inimigo
+public class Dragao extends Personagem
 {
     public Dragao(String nome) 
     {

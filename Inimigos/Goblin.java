@@ -4,7 +4,7 @@ import java.util.Random;
 
 import Personagens.Personagem;
 
-public class Goblin extends Inimigo
+public class Goblin extends Personagem
 {
     public Goblin(String nome) 
     {
