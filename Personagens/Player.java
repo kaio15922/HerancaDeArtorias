@@ -28,6 +28,25 @@ public class Player {
         this.salaAtual = salaAtual;
     }
 
+    //Abaixo, temos os metodos responsaveis por mover o jogador:
+    public boolean mover(String direcao){
+        Sala salaProxima = salaAtual.getDirecoes(direcao);
+
+        if (salaProxima != null){
+            salaAtual = salaProxima;
+            System.out.println("Deslocamento feito com sucesso!");
+            return true;
+        }
+
+        System.out.println("Nao consegui se deslocar!");
+        return false;
+    }
+
+    public void olhar(){
+        System.out.println(salaAtual.getNome());
+        System.out.println(salaAtual.getDescricao());
+        salaAtual.mostrarCaminhos();
+    }
     //Abaixo todas os metodos vao chamar metodos de personagemEscolhido
     public void addItem(Item item){
         personagemEscolhido.adicionarItem(item);

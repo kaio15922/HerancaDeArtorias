@@ -50,7 +50,6 @@ public class Main
             sc.close();
             return;
         }
-        sc.close();
 
         // Cria jogador
         Player jogador = new Player(personagens.get(escolha));
@@ -58,5 +57,6 @@ public class Main
         //Iniciando jogo
         jogo = new Game(jogador);
         jogo.iniciarJogo();
+        sc.close();
     }
 }
