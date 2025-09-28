@@ -16,7 +16,7 @@ public class Arqueiro extends Personagem implements HabilidadeEspecial
     {
         Random rand = new Random();
         int dano = getAtaque() + rand.nextInt(6, 31);
-        System.out.println("\n"+getNome() + " manda uma flechada certeira!");
+        System.out.println("\n\n-------------------------\n"+getNome() + " manda uma flechada certeira!");
         alvo.receberDano(dano);
     }
 
@@ -26,7 +26,7 @@ public class Arqueiro extends Personagem implements HabilidadeEspecial
         Random rand = new Random();
         int dano = getAtaque() + rand.nextInt(6, 16);
         dano = dano * 2;
-        System.out.println(getNome() + " dispara chuva de flechas!");
+        System.out.println("\n\n-------------------------\n"+getNome() + " dispara chuva de flechas!");
         alvo.receberDano(dano);
     }
 }

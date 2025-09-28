@@ -57,7 +57,7 @@ public abstract class Personagem
     public void adicionarItem(Item item) 
     {
         inventario.add(item);
-        System.out.println(item.getNome() + " adicionado ao inventário!");
+        //System.out.println(item.getNome() + " adicionado ao inventário!");
     }
 
     public void mostrarInventario() 

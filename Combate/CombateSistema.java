@@ -20,9 +20,9 @@ public class CombateSistema
             {
                 jogador.atacar(inimigo);
             } 
-            else if (acao == 2 && jogador instanceof Habilidades.HabilidadeEspecial) 
+            else if (acao == 2) 
             {
-                ((Habilidades.HabilidadeEspecial) jogador).usarULT(inimigo);
+                ((Habilidades.HabilidadeEspecial) jogador.getPersonagem()).usarULT(inimigo);
             } 
             else if (acao == 3) 
             {
@@ -44,7 +44,7 @@ public class CombateSistema
 
             System.out.println("\nVez do inimigo!");
 
-            //Jogador eh um Player, que por sua vez tem um personagem -> Parametro de atacar
+            // Jogador eh um Player, que por sua vez tem um personagem -> Parametro de atacar
             inimigo.atacar(jogador.getPersonagem());
 
             if (!jogador.estaVivo()) 

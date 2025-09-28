@@ -16,7 +16,7 @@ public class Barbaro extends Personagem implements HabilidadeEspecial
     {
         Random rand = new Random();
         int dano = getAtaque() + rand.nextInt(6, 26);
-        System.out.println("\n"+getNome() + " ataca com um machado rapido!");
+        System.out.println("\n\n-------------------------\n"+getNome() + " ataca com um machado rapido!");
         alvo.receberDano(dano);
     }
 
@@ -26,7 +26,7 @@ public class Barbaro extends Personagem implements HabilidadeEspecial
         Random rand = new Random();
         int dano = getAtaque() + rand.nextInt(6, 11);
         dano = dano * 2;
-        System.out.println(getNome() + " taca um machado muito forte");
+        System.out.println("\n\n-------------------------\n"+getNome() + " taca um machado muito forte");
         alvo.receberDano(dano);
     }
 }

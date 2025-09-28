@@ -1,11 +1,12 @@
 import Personagens.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import Combate.CombateSistema;
-import Inimigos.Goblin;
+//import Combate.CombateSistema;
+/*import Inimigos.Goblin;
 import Itens.PocaoAtaque;
 import Itens.PocaoDefesa;
-import Itens.PocaoVida;
+import Itens.PocaoVida;*/
+import Musica.Musiquinha;
 import InitGame.*;
 
 public class Main 
@@ -18,12 +19,16 @@ public class Main
         ArrayList<Personagem> personagens = new ArrayList<>();
 
         // Sistema de combate
-        CombateSistema combate = new CombateSistema();
+        //CombateSistema combate = new CombateSistema();
 
         // Criação dos personagens
         personagens.add(new Mago("Gandalf"));
         personagens.add(new Barbaro("Conan"));
         personagens.add(new Arqueiro("Legolas"));
+
+        // Tocando musica daora
+        Musiquinha musica = new Musiquinha();
+        musica.tocar("battle_theme.wav");
 
         // Escolha do personagem e tratamento caso tente escolher algo fora dos parametros
         System.out.println("=== RPG de Texto ===");

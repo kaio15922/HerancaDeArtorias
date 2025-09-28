@@ -16,7 +16,7 @@ public class Mago extends Personagem implements HabilidadeEspecial
     {
         Random rand = new Random();
         int dano = getAtaque() + rand.nextInt(6, 36);
-        System.out.println("\n"+getNome() + " lança uma bola de fogo!");
+        System.out.println("\n\n-------------------------\n"+getNome() + " lança uma bola de fogo!");
         alvo.receberDano(dano);
     }
 
@@ -26,7 +26,7 @@ public class Mago extends Personagem implements HabilidadeEspecial
         Random rand = new Random();
         int dano = getAtaque() + rand.nextInt(6, 21);
         dano = dano * 2;
-        System.out.println(getNome() + " usa Magia Suprema!");
+        System.out.println("\n\n-------------------------\n"+getNome() + " usa Magia Suprema!");
         alvo.receberDano(dano);
     }
 }

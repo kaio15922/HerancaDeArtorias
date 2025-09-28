@@ -7,7 +7,8 @@ import Personagens.*;
 import java.util.Scanner;
 import Combate.CombateSistema;
 
-public class Game {
+public class Game 
+{
     private Player player;
     private Sala spwan;
     private Mapa mapa;
@@ -15,14 +16,16 @@ public class Game {
     private CombateSistema combate;
 
 
-    public Game(Player player){
+    public Game(Player player)
+    {
         this.player = player;
         this.sc = new Scanner(System.in);
         this.combate = new CombateSistema();
     }
 
-    //Aqui ficariam os inimigos
-    public void iniciarJogo(){
+    // Aqui ficariam os inimigos
+    public void iniciarJogo()
+    {
         this.mapa = new Mapa();
         this.spwan = mapa.getSalaInicial();
         player.setSalaAtual(this.spwan);
@@ -36,7 +39,7 @@ public class Game {
         player.addItem(poçaoAtk);
 
         System.out.println("Você escolheu: " + player.getNome());
-        //Tentar mover:
+        // Tentar mover:
         player.mover(Sala.LESTE);
         player.olhar();
         player.mover(Sala.NORTE);
