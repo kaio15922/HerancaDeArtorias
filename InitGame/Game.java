@@ -1,11 +1,9 @@
 package InitGame;
-import Inimigos.Goblin;
 import Itens.PocaoAtaque;
 import Itens.PocaoDefesa;
 import Itens.PocaoVida;
 import Personagens.*;
 import java.util.Scanner;
-import Combate.CombateSistema;
 
 public class Game 
 {
@@ -13,17 +11,14 @@ public class Game
     private Sala spwan;
     private Mapa mapa;
     private Scanner sc;
-    private CombateSistema combate;
-
 
     public Game(Player player)
     {
         this.player = player;
         this.sc = new Scanner(System.in);
-        this.combate = new CombateSistema();
     }
 
-    // Aqui ficariam os inimigos
+    // Start
     public void iniciarJogo()
     {
         this.mapa = new Mapa();
@@ -38,20 +33,32 @@ public class Game
         player.addItem(poçaoDef);
         player.addItem(poçaoAtk);
 
-        System.out.println("Você escolheu: " + player.getNome());
-        // Tentar mover:
-        player.mover(Sala.LESTE);
-        player.olhar();
-        player.mover(Sala.NORTE);
-        player.olhar();
-        // Cria inimigo
-        Personagem goblin = new Goblin("Goblin Selvagem");
-
-        boolean morreu;
-        morreu = combate.combate(player, goblin, sc);
-        if(morreu)
+        // Sistema de andada
+        while (true) 
         {
-            System.out.println("Morreu Fim de jogo");;
+            verificarInimigo();
+
+            System.out.println("\n=== Você está na " + player.getSalaAtual().getNome() + " ===");
+            System.out.println(player.getSalaAtual().getDescricao());
+            System.out.println(player.getSalaAtual().getCaminhosDisponiveis());
+
+            System.out.print("Digite a direção para se mover (norte, sul, leste, oeste): ");
+            String direcao = sc.nextLine().toLowerCase();
+
+            player.mover(direcao);
         }
+        
     }
+
+    // Verificador pra ver se tem inimigo na sala
+    private void verificarInimigo() 
+    {
+    boolean morreu = player.getSalaAtual().temInimigo(player, sc);
+    if(morreu) 
+    {
+        System.out.println("Fim de jogo!");
+        System.exit(0);
+    }
+}
+
 }

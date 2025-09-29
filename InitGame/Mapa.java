@@ -1,6 +1,8 @@
 package InitGame;
 import java.util.*;
 
+import Inimigos.*;
+
 public class Mapa 
 {
     private Map<String, Sala> salas;
@@ -15,19 +17,23 @@ public class Mapa
 
     public void carregarMapa()
     {
-        //Aqui a gente coloca todas as salas (40 no total)
-        Sala sala1 = new Sala("Sala 1","Voce acorda em uma masmorra, ");
-        Sala sala2 = new Sala("Sala 2","Um corredor com armas e joias");
+        // Aqui a gente coloca todas as salas (40 no total)
+        Sala sala1 = new Sala("Sala 1","Voce acorda em uma masmorra, ", new Goblin("Goblin da masmorra"));
+        Sala sala2 = new Sala("Sala 2","Um corredor com armas e joias", new Goblin("Goblin do corredor"));
+        Sala sala3 = new Sala("Sala 3","Uma sala qualquer", null);
 
-        //Lembre-se que sala inicial em player esta como null, precisamos setar isso:
+
+        // Lembre-se que sala inicial em player esta como null, precisamos setar isso:
         this.salaInicial = sala1;
 
-        //No final a gente adiciona no Hash map salas
+        // No final a gente adiciona no Hash map salas
         adicionarSalas(sala1);
         adicionarSalas(sala2);
+        adicionarSalas(sala3);
 
-        //Conectando salas:
+        // Conectando salas:
         conectarSalas("Sala 1", Sala.LESTE, "Sala 2");
+        conectarSalas("Sala 2", Sala.NORTE, "Sala 3");
     }
 
     public void adicionarSalas(Sala sala)
@@ -48,7 +54,7 @@ public class Mapa
         {
             salaOrigem.adicionarCaminhos(direcao, salaDestino);
 
-            //Pegando caminho oposto:
+            // Pegando caminho oposto:
             salaDestino.adicionarCaminhos(getDirecaoOposta(direcao), salaOrigem);
         }
 

@@ -27,6 +27,11 @@ public class Player
         return personagemEscolhido.getNome();
     }
 
+    public Sala getSalaAtual() 
+    {
+        return salaAtual;
+    }
+
     //Setters:
     public void setSalaAtual(Sala salaAtual) 
     {
