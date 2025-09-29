@@ -5,16 +5,19 @@ import Personagens.Personagem;
 
 public class Orc extends Personagem
 {
+    //Construtor da classe que faz referencia ao construtor da super classe
     public Orc(String nome) 
     {
         super(nome, 80, 15, 5);
     }
 
+    /*Orc realiza um ataque:
+     * 15 + valor aleatorio entre 10 e 20*/
     @Override
     public void atacar(Personagem alvo) 
     {
         Random rand = new Random();
-        int dano = getAtaque() + rand.nextInt(10, 21);
+        int dano = getAtaque() + rand.nextInt(10, 21); // 10 a 20 aleatório
         System.out.println(getNome() + " golpeia com força brutal!");
         alvo.receberDano(dano);
     }

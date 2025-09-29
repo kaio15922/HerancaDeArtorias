@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class Sala 
 {
+    //Atributos
     private String nome;
     private String descricao;
     private Map<String, Sala> caminhos;
@@ -22,23 +23,18 @@ public class Sala
         this.caminhos = new HashMap<>();
     }
 
+    /*Aqui adicionamos os caminhos:
+    * Direcao -> Sala destino*/
     public void adicionarCaminhos(String direcao, Sala destino)
     {
+        //É interessante deixar tudo em minusculo ou maisculo para facilitar a busca.
         caminhos.put(direcao.toLowerCase(), destino);
     }
 
+    //Vai listar A sala com base na direcao
     public Sala getDirecoes(String direcao)
     {
         return caminhos.get(direcao.toLowerCase());
-    }
-
-    public String getCaminhosDisponiveis()
-    {
-        if (caminhos.isEmpty()){
-            return "Nao ha saidas disponiveis!";
-        }
-
-        return "Saidas: " + String.join(", ", caminhos.keySet());
     }
 
     //Getters
@@ -52,6 +48,7 @@ public class Sala
         return this.descricao;
     }
 
+    //Mostrar as direcoes que o player pode seguir com base em uma sala
     public void mostrarCaminhos()
     {
         System.out.println("Direcoes possiveis: " + caminhos.keySet());

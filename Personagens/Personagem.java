@@ -6,12 +6,14 @@ import Itens.Item;
 
 public abstract class Personagem 
 {
+    //Atributos de Personagem
     private String nome;
     private int vida;
     private int ataque;
     private int defesa;
     private ArrayList<Item> inventario;
 
+    //Construtor da classe, precisamos apenas de 4 parametros, pois inventario inicia vazio
     public Personagem(String nome, int vida, int ataque, int defesa) 
     {
         this.nome = nome;
@@ -21,6 +23,7 @@ public abstract class Personagem
         this.inventario = new ArrayList<>();
     }
 
+    //Getters que serao necessarios para o codigo:
     public int getAtaque() 
     {
         return ataque;
@@ -54,6 +57,8 @@ public abstract class Personagem
         this.vida = vida;
     }
 
+    //Metodos:
+
     public void adicionarItem(Item item) 
     {
         inventario.add(item);
@@ -62,21 +67,22 @@ public abstract class Personagem
 
     public void mostrarInventario() 
     {
-        System.out.println("=== Inventário de " + nome + " ===");
-        for (int i = 0; i < inventario.size(); i++) 
+        System.out.println("=== Inventário de " + this.nome + " ===");
+        for (int i = 0; i < this.inventario.size(); i++)
         {
-            Item item = inventario.get(i);
+            Item item = this.inventario.get(i);
             System.out.println(i + " - " + item.getNome() + ": " + item.getDescricao());
         }
     }
 
     public void usarItem(int indice) 
     {
-        if (indice >= 0 && indice < inventario.size()) 
+        //Verificando se indice eh maior que zero e se ehh menor que o tamnho do inventario (nao tem como indice ser 3 se o inventario so tem 2 items)
+        if (indice >= 0 && indice < this.inventario.size())
         {
             Item item = inventario.get(indice);
             item.usar(this); // aplica efeito ao personagem
-            inventario.remove(indice); // item consumido
+            this.inventario.remove(indice); // item consumido
         } 
         else 
         {
@@ -86,25 +92,34 @@ public abstract class Personagem
 
     public void receberDano(int dano) 
     {
-        int danoFinal = dano - defesa;
-        if (danoFinal < 0) 
+        //O dano tomado pelo Player vai depender dos seus pontos em defesa
+        int danoFinal = dano - this.defesa;
+
+        //Nao faz sentido o dano ser -20 (so acontecera se a defesa tiver mais pontos que o ataque sofrido)
+        if (danoFinal < 0)
         {
             danoFinal = 0;
         }
 
-        vida -= danoFinal;
+        //Recebendo dano
+        this.vida -= danoFinal;
 
-        if (vida < 0) 
+        //Nao faz sentido a vida ser -20, por exemplo. Entao caso a vida seja menor que zero -> morreu!
+        if (this.vida < 0)
         {
-            vida = 0;
+            this.vida = 0;
         }
 
-        System.out.println(nome + " recebeu " + danoFinal + " de dano. Vida restante: " + vida);
+        //Exibindo dano
+        System.out.println(this.nome + " recebeu " + danoFinal + " de dano. Vida restante: " + this.vida);
     }
 
+    //Um boolean que vai retornar true -> se estiver vivo ou Fale-> se morrer
     public boolean estaVivo() 
     {
-        return vida > 0;
+        return this.vida > 0;
     }
+
+    //Funcao abstrat que todos os personagens deverao implementar -> Cada um executa um ataque com dano diferente
     public abstract void atacar(Personagem alvo);
 }

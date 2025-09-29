@@ -1,11 +1,6 @@
 import Personagens.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-//import Combate.CombateSistema;
-/*import Inimigos.Goblin;
-import Itens.PocaoAtaque;
-import Itens.PocaoDefesa;
-import Itens.PocaoVida;*/
 import Musica.Musiquinha;
 import InitGame.*;
 
@@ -34,13 +29,17 @@ public class Main
         System.out.println("=== RPG de Texto ===");
         System.out.println("Escolha seu herói:");
 
+        //Lista todas as opcoes de personagens que o player pode escolher
         for (int i = 0; i < personagens.size(); i++) 
         {
             System.out.println(i + " - " + personagens.get(i).getNome());
         }
 
+        //Tratamento de erros:
         int escolha = -1;
-        try 
+
+        //Caso player escolha uma opcao negativa ou um valor maior que o numero de personagens possiveis -> vai dar error!
+        try
         {
             escolha = sc.nextInt();
             if (escolha < 0 || escolha >= personagens.size()) 

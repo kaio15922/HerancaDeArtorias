@@ -28,7 +28,11 @@ public class Player
     }
 
     //Setters:
-    public void setSalaAtual(Sala salaAtual) 
+    public Sala getSalaAtual() {
+        return salaAtual;
+    }
+
+    public void setSalaAtual(Sala salaAtual)
     {
         this.salaAtual = salaAtual;
     }
@@ -36,18 +40,21 @@ public class Player
     //Abaixo, temos os metodos responsaveis por mover o jogador:
     public boolean mover(String direcao)
     {
+        //Aqui pega a sala que vai corresponder a direcao passa na assinatura do metodo
         Sala salaProxima = salaAtual.getDirecoes(direcao);
 
+        //Caso sala proxima exista
         if (salaProxima != null){
             salaAtual = salaProxima;
-            System.out.println("Deslocamento feito com sucesso!");
             return true;
         }
 
+        //Significa que nao achou a sala
         System.out.println("Nao consegui se deslocar!");
         return false;
     }
 
+    //Abaixo temos metodos que irão chamar os metodos correspondenstes da classe Personagem
     public void olhar()
     {
         System.out.println(salaAtual.getNome());
