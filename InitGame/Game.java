@@ -53,7 +53,10 @@ public class Game
         {
             //Verifica se chegou na ultima sala
             if (player.getSalaAtual() == mapa.getSalaFinal()){
+                System.out.println("\n-----------------------------------------------------");
                 infoSala();
+                player.getSalaAtual().mostrarInimigo();
+                verificarInimigo();
                 System.out.println("Voce chegou ao fim !");
                 break;
             }

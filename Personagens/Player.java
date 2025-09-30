@@ -40,11 +40,11 @@ public class Player
     public boolean mover(String direcao)
     {
         //Aqui pega a sala que vai corresponder a direcao passa na assinatura do metodo
-        Sala salaProxima = salaAtual.getDirecoes(direcao);
+        Sala salaProxima = this.salaAtual.getDirecoes(direcao);
 
         //Caso sala proxima exista
         if (salaProxima != null){
-            salaAtual = salaProxima;
+            this.salaAtual = salaProxima;
             return true;
         }
 
