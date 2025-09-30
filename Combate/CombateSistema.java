@@ -17,6 +17,7 @@ public class CombateSistema
             System.out.println("2 - Habilidade Especial");
             System.out.println("3 - Usar Item");
             int acao = sc.nextInt();
+            sc.nextLine();
 
             //Caso escolha atacar
             if (acao == 1) 
@@ -37,6 +38,7 @@ public class CombateSistema
                 jogador.mostrarInventario();
                 System.out.println("Escolha o item:");
                 int itemIndice = sc.nextInt();
+                sc.nextLine();
                 jogador.usarItem(itemIndice);
             }
 

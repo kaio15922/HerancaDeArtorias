@@ -19,7 +19,6 @@ public class Mapa
         carregarMapa();
     }
 
-
     //Metodo que vai carregar o mapa
     public void carregarMapa()
     {

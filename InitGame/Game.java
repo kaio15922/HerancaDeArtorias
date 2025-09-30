@@ -18,6 +18,21 @@ public class Game
         this.sc = new Scanner(System.in);
     }
 
+    //Mostrar nome e descricao da sala
+    public void infoSala(){
+        System.out.println("Voce esta em: " + player.getSalaAtual().getNome());
+        System.out.println(player.getSalaAtual().getDescricao());
+    }
+
+    //Metodo interno para pegar a direcao escolhida pelo jogador:
+    public void tentarMover(){
+        System.out.println("-----------------------------------------------------");
+        player.olhar();
+        System.out.println("Escolha uma direcao:");
+        String escolha = sc.nextLine();
+        player.mover(escolha);
+    }
+
     // Start
     public void iniciarJogo()
     {
@@ -36,16 +51,18 @@ public class Game
         // Sistema de andada
         while (true) 
         {
+            //Verifica se chegou na ultima sala
+            if (player.getSalaAtual() == mapa.getSalaFinal()){
+                infoSala();
+                System.out.println("Voce chegou ao fim !");
+                break;
+            }
+
+            System.out.println("\n-----------------------------------------------------");
+            infoSala();
+            player.getSalaAtual().mostrarInimigo();
             verificarInimigo();
-
-            System.out.println("\n=== Você está na " + player.getSalaAtual().getNome() + " ===");
-            System.out.println(player.getSalaAtual().getDescricao());
-            System.out.println(player.getSalaAtual().getCaminhosDisponiveis());
-
-            System.out.print("Digite a direção para se mover (norte, sul, leste, oeste): ");
-            String direcao = sc.nextLine().toLowerCase();
-
-            player.mover(direcao);
+            tentarMover();
         }
         
     }

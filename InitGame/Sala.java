@@ -38,14 +38,13 @@ public class Sala
         caminhos.put(direcao.toLowerCase(), destino);
     }
 
+    //Getters
+
     //Vai listar A sala com base na direcao
     public Sala getDirecoes(String direcao)
     {
         return caminhos.get(direcao.toLowerCase());
     }
-
-
-    //Getters
 
     public String getCaminhosDisponiveis()
     {
@@ -58,26 +57,25 @@ public class Sala
 
     // Método pra verificar se tem inimigos na sala
     public boolean temInimigo(Player jogador, Scanner sc)
-{
-    Personagem inimigo = getInimigo();
-    if(inimigo == null)
     {
-        return false;
-    } 
+        Personagem inimigo = getInimigo();
+        if(inimigo == null)
+        {
+            return false;
+        }
     
-    boolean taMorto = combate.combate(jogador, inimigo, sc);
-    if(taMorto) 
-    {
-        return true;
+        boolean taMorto = combate.combate(jogador, inimigo, sc);
+        if(taMorto)
+        {
+            return true;
+        }
+        else
+        {
+            setInimigo(null);
+            return false;
+        }
     }
-    else 
-    {
-        setInimigo(null);
-        return false;
-    }
-}
 
-    // Getters
     public String getNome() 
     {
         return nome;
@@ -86,23 +84,33 @@ public class Sala
     {
         return this.descricao;
     }
-
-    //Mostrar as direcoes que o player pode seguir com base em uma sala
-    public void mostrarCaminhos()
-    {
-        System.out.println("Direcoes possiveis: " + caminhos.keySet());
-    }
-    public Personagem getInimigo() 
+    public Personagem getInimigo()
     {
         return inimigo;
     }
     public CombateSistema getCombate() {
         return combate;
     }
-    
+
     // Setter
-    public void setInimigo(Personagem inimigo) 
+    public void setInimigo(Personagem inimigo)
     {
         this.inimigo = inimigo;
     }
+
+    //Mostrar as direcoes que o player pode seguir com base em uma sala
+    public void mostrarCaminhos()
+    {
+        System.out.println("Direcoes possiveis: " + caminhos.keySet());
+    }
+
+    //Mostrar o inimigo:
+    public void mostrarInimigo(){
+        if (this.getInimigo() == null){
+            System.out.println("Nao ha inimigos");
+        }else {
+            System.out.println("Ha um inimigo aqui: " + this.inimigo.getNome());
+        }
+    }
+
 }

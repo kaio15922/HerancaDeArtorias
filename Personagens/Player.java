@@ -30,13 +30,11 @@ public class Player
     public Sala getSalaAtual() 
     {
         return salaAtual;
+    public Sala getSalaAtual(){
+        return this.salaAtual;
     }
 
     //Setters:
-    public Sala getSalaAtual() {
-        return salaAtual;
-    }
-
     public void setSalaAtual(Sala salaAtual)
     {
         this.salaAtual = salaAtual;
@@ -62,8 +60,6 @@ public class Player
     //Abaixo temos metodos que irão chamar os metodos correspondenstes da classe Personagem
     public void olhar()
     {
-        System.out.println(salaAtual.getNome());
-        System.out.println(salaAtual.getDescricao());
         salaAtual.mostrarCaminhos();
     }
     //Abaixo todas os metodos vao chamar metodos de personagemEscolhido
