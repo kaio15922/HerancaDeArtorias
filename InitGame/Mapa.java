@@ -27,46 +27,46 @@ public class Mapa
     {
 
         // Aqui a gente coloca todas as salas (40 no total)
-        Sala sala1 = new Sala("Vilarejo inicial", descricoes.getDescricaoSala1(), new Goblin("Goblin da masmorra"));
-        Sala sala2 = new Sala("Rota 2", descricoes.getDescricaoSala2(), new Goblin("Goblin do corredor"));
+        Sala sala1 = new Sala("Vilarejo inicial", descricoes.getDescricaoSala1(), null);
+        Sala sala2 = new Sala("Rota 2", descricoes.getDescricaoSala2(), new Goblin("Goblin do mato"));
         Sala sala3 = new Sala("Vilarejo Vizinho 3", descricoes.getDescricaoSala3(), null);
-        Sala sala4 = new Sala("Floresta 4", descricoes.getDescricaoSala4(), null);
+        Sala sala4 = new Sala("Floresta 4", descricoes.getDescricaoSala4(), new Goblin("Goblin da floresta"));
         Sala sala5 = new Sala("Rota 5", descricoes.getDescricaoSala5(), null);
-        Sala sala6 = new Sala("Rota 6", descricoes.getDescricaoSala6(), null);
+        Sala sala6 = new Sala("Rota 6", descricoes.getDescricaoSala6(), new Goblin("Goblin das ruas"));
         Sala sala7 = new Sala("Lixão 7", descricoes.getDescricaoSala7(), null);
         Sala sala8 = new Sala("Rota 8", descricoes.getDescricaoSala8(), null);
-        Sala sala9 = new Sala("Caverna Goblin 9", descricoes.getDescricaoSala9(), null);
+        Sala sala9 = new Sala("Caverna Goblin 9", descricoes.getDescricaoSala9(), new Orc("Orc bombado"));
         Sala sala10 = new Sala("Rota 10", descricoes.getDescricaoSala10(), null);
         Sala sala11 = new Sala("Rota 11", descricoes.getDescricaoSala11(), null);
         Sala sala12 = new Sala("Acampamento 12", descricoes.getDescricaoSala12(), null);
         Sala sala13 = new Sala("Rota 13", descricoes.getDescricaoSala13(), null);
         Sala sala14 = new Sala("Rota 14", descricoes.getDescricaoSala14(), null);
-        Sala sala15 = new Sala("Ponte quebrada 15", descricoes.getDescricaoSala15(), null);
+        Sala sala15 = new Sala("Ponte quebrada 15", descricoes.getDescricaoSala15(), new Orc("Orc da ponte"));
         Sala sala16 = new Sala("Rota 16", descricoes.getDescricaoSala16(), null);
         Sala sala17 = new Sala("Rota 17", descricoes.getDescricaoSala17(), null);
         Sala sala18 = new Sala("Sala 18", descricoes.getDescricaoSala18(), null);
-        Sala sala19 = new Sala("Rota 19", descricoes.getDescricaoSala19(), null);
-        Sala sala20 = new Sala("Rota 20", descricoes.getDescricaoSala20(), null);
+        Sala sala19 = new Sala("Rota 19", descricoes.getDescricaoSala19(), new Goblin("Goblinzin"));
+        Sala sala20 = new Sala("Rota 20", descricoes.getDescricaoSala20(), new Goblin("Goblin maldito"));
         Sala sala21 = new Sala("Rota 21", descricoes.getDescricaoSala21(), null);
         Sala sala22 = new Sala("Rota 22", descricoes.getDescricaoSala22(), null);
         Sala sala23 = new Sala("Rota 23", descricoes.getDescricaoSala23(), null);
         Sala sala24 = new Sala("Cidade 24", descricoes.getDescricaoSala24(), null);
-        Sala sala25 = new Sala("Arredores 25", descricoes.getDescricaoSala25(), null);
+        Sala sala25 = new Sala("Arredores 25", descricoes.getDescricaoSala25(), new Goblin("Outro Goblin !?"));
         Sala sala26 = new Sala("Vítima 26", descricoes.getDescricaoSala26(), null);
         Sala sala27 = new Sala("Estátua 27", descricoes.getDescricaoSala27(), null);
         Sala sala28 = new Sala("Rota 28", descricoes.getDescricaoSala28(), null);
-        Sala sala29 = new Sala("Fim do Desfiladeiro 29", descricoes.getDescricaoSala29(), null);
+        Sala sala29 = new Sala("Fim do Desfiladeiro 29", descricoes.getDescricaoSala29(), new Orc("Orc do desfiladeiro"));
         Sala sala30 = new Sala("Rota 30", descricoes.getDescricaoSala30(), null);
         Sala sala31 = new Sala("Lago 31", descricoes.getDescricaoSala31(), null);
         Sala sala32 = new Sala("Rota 32", descricoes.getDescricaoSala32(), null);
-        Sala sala33 = new Sala("Rota 33", descricoes.getDescricaoSala33(), null);
+        Sala sala33 = new Sala("Rota 33", descricoes.getDescricaoSala33(), new Goblin("Advinha.. outro Goblin"));
         Sala sala34 = new Sala("Rota 34", descricoes.getDescricaoSala34(), null);
-        Sala sala35 = new Sala("Rota 35", descricoes.getDescricaoSala35(), null);
+        Sala sala35 = new Sala("Rota 35", descricoes.getDescricaoSala35(), new Orc("Orc pre-final boss"));
         Sala sala36 = new Sala("Acampamento de Bandidos 36", descricoes.getDescricaoSala36(), null);
         Sala sala37 = new Sala("Rota 37", descricoes.getDescricaoSala37(), null);
         Sala sala38 = new Sala("Rota 38", descricoes.getDescricaoSala38(), null);
         Sala sala39 = new Sala("Caverna 39", descricoes.getDescricaoSala39(), null);
-        Sala sala40 = new Sala("Ninho do Dragão 40", descricoes.getDescricaoSala40(), null);
+        Sala sala40 = new Sala("Ninho do Dragão 40", descricoes.getDescricaoSala40(), new Dragao("Dragão branco dos olhos azuis"));
 
 
         // Lembre-se que sala inicial em player esta como null, precisamos setar isso:
@@ -160,7 +160,6 @@ public class Mapa
     public void adicionarSalas(Sala sala)
     {
         salas.put(sala.getNome(), sala);
-        System.out.println("Sala adicionada: " + sala.getNome());
     }
 
     //Metodo para conectar salas
