@@ -16,9 +16,16 @@ public class Orc extends Personagem
     @Override
     public void atacar(Personagem alvo) 
     {
-        Random rand = new Random();
-        int dano = getAtaque() + rand.nextInt(10, 21); // 10 a 20 aleatório
-        System.out.println(getNome() + " golpeia com força brutal!");
-        alvo.receberDano(dano);
+        try{
+            Random rand = new Random();
+            int dano = getAtaque() + rand.nextInt(10, 21); // 10 a 20 aleatório
+            Thread.sleep(1000);
+            System.out.println(getNome() + " golpeia com força brutal!");
+            Thread.sleep(1000);
+            alvo.receberDano(dano);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
     }
 }

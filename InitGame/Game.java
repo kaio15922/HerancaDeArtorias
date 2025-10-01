@@ -20,13 +20,21 @@ public class Game
 
     //Mostrar nome e descricao da sala
     public void infoSala(){
-        System.out.println("Voce esta em: " + player.getSalaAtual().getNome());
-        System.out.println(player.getSalaAtual().getDescricao());
+
+        //Tenta exibir com uma pausa
+        try{
+            System.out.println("Voce esta em: " + player.getSalaAtual().getNome());
+            Thread.sleep(1000);
+            System.out.println(player.getSalaAtual().getDescricao());
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
     }
 
     //Metodo interno para pegar a direcao escolhida pelo jogador:
     public void tentarMover(){
-        System.out.println("-----------------------------------------------------");
+        System.out.println("------------------------------------------------------------------");
         player.olhar();
         System.out.println("Escolha uma direcao:");
         String escolha = sc.nextLine();
@@ -53,7 +61,7 @@ public class Game
         {
             //Verifica se chegou na ultima sala
             if (player.getSalaAtual() == mapa.getSalaFinal()){
-                System.out.println("\n-----------------------------------------------------");
+                System.out.println("------------------------------------------------------------------");
                 infoSala();
                 player.getSalaAtual().mostrarInimigo();
                 verificarInimigo();
@@ -61,11 +69,18 @@ public class Game
                 break;
             }
 
-            System.out.println("\n-----------------------------------------------------");
-            infoSala();
-            player.getSalaAtual().mostrarInimigo();
-            verificarInimigo();
-            tentarMover();
+            try{
+                System.out.println("------------------------------------------------------------------");
+                infoSala();
+                Thread.sleep(1000);
+                player.getSalaAtual().mostrarInimigo();
+                verificarInimigo();
+                Thread.sleep(1000);
+                tentarMover();
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+
         }
         
     }
