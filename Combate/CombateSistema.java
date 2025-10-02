@@ -61,7 +61,6 @@ public class CombateSistema
                     {
                         System.out.println("Moio");
                     }
-
                 }
 
                 // Caso a acao nao seja reconhecida

@@ -16,7 +16,8 @@ public class Game
     }
 
     // Mostrar nome e descricao da sala
-    public void infoSala(){
+    public void infoSala()
+    {
 
         // Tenta exibir com uma pausa
         try
@@ -53,7 +54,8 @@ public class Game
         while (true) 
         {
             // Verifica se chegou na ultima sala
-            if (player.getSalaAtual() == mapa.getSalaFinal()){
+            if (player.getSalaAtual() == mapa.getSalaFinal())
+            {
                 System.out.println("------------------------------------------------------------------");
                 infoSala();
                 player.getSalaAtual().mostrarInimigo();
@@ -62,7 +64,8 @@ public class Game
                 break;
             }
 
-            try{
+            try
+            {
                 System.out.println("------------------------------------------------------------------");
                 infoSala();
                 Thread.sleep(1000);
@@ -70,7 +73,9 @@ public class Game
                 verificarInimigo();
                 Thread.sleep(1000);
                 tentarMover();
-            }catch (InterruptedException e){
+            }
+            catch (InterruptedException e)
+            {
                 e.printStackTrace();
             }
 

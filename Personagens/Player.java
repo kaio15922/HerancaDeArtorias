@@ -27,12 +27,14 @@ public class Player
         return personagemEscolhido.getNome();
     }
 
-    public Sala getSalaAtual(){
+    public Sala getSalaAtual()
+    {
         return this.salaAtual;
     }
 
     // Setters:
-    public void setSalaAtual(Sala salaAtual) {
+    public void setSalaAtual(Sala salaAtual) 
+    {
         this.salaAtual = salaAtual;
     }
 

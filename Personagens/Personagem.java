@@ -2,9 +2,7 @@ package Personagens;
 
 import java.util.ArrayList;
 
-import Itens.Item;
-import Itens.PocaoAtaque;
-import Itens.PocaoDefesa;
+import Itens.*;
 
 public abstract class Personagem 
 {

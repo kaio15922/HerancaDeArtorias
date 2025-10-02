@@ -10,7 +10,8 @@ public abstract class Item
     private int efeito; // pode ser cura, ataque, defesa etc.
 
     // Construtor da classe
-    public Item(String nome, String descricao, int efeito) {
+    public Item(String nome, String descricao, int efeito) 
+    {
         this.nome = nome;
         this.descricao = descricao;
         this.efeito = efeito;

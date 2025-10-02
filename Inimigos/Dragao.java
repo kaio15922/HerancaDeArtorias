@@ -1,16 +1,14 @@
 package Inimigos;
 
 import java.util.Random;
-
 import Personagens.Personagem;
 
-// Dragao é um personagem -> Herança
 public class Dragao extends Personagem
 {
     // Construtor da classe que faz referencia ao construtor da super classe
     public Dragao(String nome) 
     {
-        super(nome, 150, 25, 10);
+        super(nome, 125, 10, 10);
     }
 
     /*Dragao realiza um ataque:

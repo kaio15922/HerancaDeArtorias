@@ -176,7 +176,8 @@ public class Mapa
         Sala salaDestino = salas.get(destino);
 
         // Caso sala origem ou sala destino nao existir
-        if (salaOrigem == null || salaDestino == null){
+        if (salaOrigem == null || salaDestino == null)
+        {
             System.out.println("Sala nao encontrada -> impossivel realizar conexao");
         } 
         else
