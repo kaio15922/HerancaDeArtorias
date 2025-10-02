@@ -1,7 +1,6 @@
 import Personagens.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import Musica.Musiquinha;
 import InitGame.*;
 
 public class Main 
