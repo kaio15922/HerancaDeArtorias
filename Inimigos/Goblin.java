@@ -6,7 +6,7 @@ import Personagens.Personagem;
 
 public class Goblin extends Personagem
 {
-    //Construtor da classe que faz referencia ao construtor da super classe
+    // Construtor da classe que faz referencia ao construtor da super classe
     public Goblin(String nome) 
     {
         super(nome, 50, 10, 2);
@@ -18,16 +18,18 @@ public class Goblin extends Personagem
     @Override
     public void atacar(Personagem alvo) 
     {
-        try {
+        try 
+        {
             Random rand = new Random();
             int dano = getAtaque() + rand.nextInt(5, 16); // 5 a 15 aleatório
             Thread.sleep(1000);
             System.out.println(getNome() + " ataca sorrateiro!");
             Thread.sleep(1000);
             alvo.receberDano(dano);
-        }catch (InterruptedException e){
+        }
+        catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
-
     }
 }

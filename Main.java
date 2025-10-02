@@ -14,7 +14,6 @@ public class Main
         ArrayList<Personagem> personagens = new ArrayList<>();
 
         // Sistema de combate
-        //CombateSistema combate = new CombateSistema();
 
         // Criação dos personagens
         personagens.add(new Mago("Gandalf"));
@@ -58,7 +57,7 @@ public class Main
         // Cria jogador
         Player jogador = new Player(personagens.get(escolha));
 
-        //Iniciando jogo
+        // Iniciando jogo
         jogo = new Game(jogador);
         jogo.iniciarJogo();
         sc.close();

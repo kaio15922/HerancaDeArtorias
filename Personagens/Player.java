@@ -15,8 +15,8 @@ public class Player
         this.salaAtual = null;
     }
 
-    //Getters
-    //Get personagem -> vai ser necessario em algumas situacoes, como os inimigos darem dano no player
+    // Getters
+    // Get personagem -> vai ser necessario em algumas situacoes, como os inimigos darem dano no player
     public Personagem getPersonagem()
     {
         return this.personagemEscolhido;
@@ -31,52 +31,48 @@ public class Player
         return this.salaAtual;
     }
 
-    //Setters:
+    // Setters:
     public void setSalaAtual(Sala salaAtual) {
         this.salaAtual = salaAtual;
     }
 
-    //Abaixo, temos os metodos responsaveis por mover o jogador:
+    // Abaixo, temos os metodos responsaveis por mover o jogador:
     public boolean mover(String direcao)
     {
-        //Aqui pega a sala que vai corresponder a direcao passa na assinatura do metodo
+        // Aqui pega a sala que vai corresponder a direcao passa na assinatura do metodo
         Sala salaProxima = this.salaAtual.getDirecoes(direcao);
 
-        //Caso sala proxima exista
-        if (salaProxima != null){
+        // Caso sala proxima exista
+        if (salaProxima != null)
+        {
             this.salaAtual = salaProxima;
             return true;
         }
 
-        //Significa que nao achou a sala
+        // Significa que nao achou a sala
         System.out.println("Nao consegui se deslocar!");
         return false;
     }
 
-    //Abaixo temos metodos que irão chamar os metodos correspondenstes da classe Personagem
+    // Abaixo temos metodos que irão chamar os metodos correspondenstes da classe Personagem
     public void olhar()
     {
         salaAtual.mostrarCaminhos();
     }
-    //Abaixo todas os metodos vao chamar metodos de personagemEscolhido
+    // Abaixo todas os metodos vao chamar metodos de personagemEscolhido
     public void addItem(Item item)
     {
         personagemEscolhido.adicionarItem(item);
     }
 
-    public void mostrarInventario()
+    public boolean mostrarInventario()
     {
-        personagemEscolhido.mostrarInventario();
+        return personagemEscolhido.mostrarInventario();
     }
 
     public void usarItem(int indice)
     {
         personagemEscolhido.usarItem(indice);
-    }
-
-    public void recberDano(int dano)
-    {
-        personagemEscolhido.receberDano(dano);
     }
 
     public boolean estaVivo()

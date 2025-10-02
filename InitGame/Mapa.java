@@ -22,7 +22,7 @@ public class Mapa
         carregarMapa();
     }
 
-    //Metodo que vai carregar o mapa
+    // Metodo que vai carregar o mapa
     public void carregarMapa()
     {
 
@@ -156,13 +156,13 @@ public class Mapa
         conectarSalas(sala39.getNome(), Sala.LESTE, sala40.getNome());
     }
 
-    //Metodo
+    // Metodo
     public void adicionarSalas(Sala sala)
     {
         salas.put(sala.getNome(), sala);
     }
 
-    //Metodo para conectar salas
+    // Metodo para conectar salas
     public void conectarSalas(String origem, String direcao, String destino)
     {
         /*Criamos uma sala origem -> de onde o player vai sair
@@ -175,7 +175,7 @@ public class Mapa
         Sala salaOrigem = salas.get(origem);
         Sala salaDestino = salas.get(destino);
 
-        //Caso sala origem ou sala destino nao existir
+        // Caso sala origem ou sala destino nao existir
         if (salaOrigem == null || salaDestino == null){
             System.out.println("Sala nao encontrada -> impossivel realizar conexao");
         } 
@@ -192,12 +192,12 @@ public class Mapa
 
     }
 
-    //Metodo que pega o caminho oposto
+    // Metodo que pega o caminho oposto
     public String getDirecaoOposta(String direcao)
     {
         switch (direcao.toLowerCase())
         {
-            //Retorna a direcao oposta, em relacao a passada como parametro
+            // Retorna a direcao oposta, em relacao a passada como parametro
             case "norte":
                 return Sala.SUL;
             case "sul":
@@ -211,8 +211,9 @@ public class Mapa
         }
     }
 
-    //Getters
-    public Sala getSalaFinal(){
+    // Getters
+    public Sala getSalaFinal()
+    {
         return this.salas.get("Ninho do Dragão 40");
     }
     public Sala getSalaInicial()

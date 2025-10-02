@@ -9,7 +9,7 @@ public class Descricoes {
 
     }
 
-    //Criando getters para retornar as descricoes da cada sala:
+    // Criando getters para retornar as descricoes da cada sala:
     public String getDescricaoSala1(){
         return """
                 ╔════════════════════════════════════════════════════════════════╗

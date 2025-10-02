@@ -5,7 +5,7 @@ import Personagens.Personagem;
 
 public class Orc extends Personagem
 {
-    //Construtor da classe que faz referencia ao construtor da super classe
+    // Construtor da classe que faz referencia ao construtor da super classe
     public Orc(String nome) 
     {
         super(nome, 80, 15, 5);

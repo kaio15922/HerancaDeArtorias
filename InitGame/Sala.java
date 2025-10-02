@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Sala 
 {
-    //Atributos
+    // Atributos
     private String nome;
     private String descricao;
     private Map<String, Sala> caminhos;
@@ -38,9 +38,9 @@ public class Sala
         caminhos.put(direcao.toLowerCase(), destino);
     }
 
-    //Getters
+    // Getters
 
-    //Vai listar A sala com base na direcao
+    // Vai listar A sala com base na direcao
     public Sala getDirecoes(String direcao)
     {
         return caminhos.get(direcao.toLowerCase());
@@ -88,7 +88,8 @@ public class Sala
     {
         return inimigo;
     }
-    public CombateSistema getCombate() {
+    public CombateSistema getCombate() 
+    {
         return combate;
     }
 
@@ -98,19 +99,22 @@ public class Sala
         this.inimigo = inimigo;
     }
 
-    //Mostrar as direcoes que o player pode seguir com base em uma sala
+    // Mostrar as direcoes que o player pode seguir com base em uma sala
     public void mostrarCaminhos()
     {
         System.out.println("Direcoes possiveis: " + caminhos.keySet());
     }
 
-    //Mostrar o inimigo:
-    public void mostrarInimigo(){
-        if (this.getInimigo() == null){
+    // Mostrar o inimigo:
+    public void mostrarInimigo()
+    {
+        if (this.getInimigo() == null)
+        {
             System.out.println("Nao ha inimigos");
-        }else {
+        }
+        else 
+        {
             System.out.println("Ha um inimigo aqui: " + this.inimigo.getNome());
         }
     }
-
 }
