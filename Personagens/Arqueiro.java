@@ -8,7 +8,7 @@ public class Arqueiro extends Personagem implements HabilidadeEspecial
 {
     public Arqueiro(String nome) 
     {
-        super(nome, 80, 0, 7);
+        super(nome, 250, 0, 7);
     }
 
     @Override

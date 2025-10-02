@@ -8,7 +8,7 @@ public class Barbaro extends Personagem implements HabilidadeEspecial
 {
     public Barbaro(String nome)
     {
-        super(nome, 100, 0, 9);
+        super(nome, 300, 0, 12);
     }
 
     @Override

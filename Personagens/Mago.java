@@ -8,7 +8,7 @@ public class Mago extends Personagem implements HabilidadeEspecial
 {
     public Mago(String nome)
     {
-        super(nome, 60, 0, 5);
+        super(nome, 260, 0, 5);
     }
 
     @Override
