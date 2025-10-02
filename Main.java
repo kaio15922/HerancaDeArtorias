@@ -24,10 +24,6 @@ public class Main
         personagens.add(new Barbaro("Conan"));
         personagens.add(new Arqueiro("Legolas"));
 
-        // Tocando musica daora
-        Musiquinha musica = new Musiquinha();
-        musica.tocar("battle_theme.wav");
-
         // Escolha do personagem e tratamento caso tente escolher algo fora dos parametros
         System.out.println("=== RPG de Texto ===");
         System.out.println("Escolha seu herói:");
