@@ -2,13 +2,14 @@ import Personagens.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import InitGame.*;
+import Musica.Musiquinha;
 
 public class Main 
 {
     public static void main(String[] args) 
     {
         //cria o objeto da class musica e bota pra toca
-        Musica musica = new Musica();
+        Musiquinha musica = new Musiquinha();
         musica.tocar("battle_theme.wav");
 
         // Scanner pra pegar inputs e arraylist pra guardar personagens

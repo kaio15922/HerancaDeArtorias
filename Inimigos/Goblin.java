@@ -8,7 +8,7 @@ public class Goblin extends Personagem
     // Construtor da classe que faz referencia ao construtor da super classe
     public Goblin(String nome) 
     {
-        super(nome, 40, 5, 2);
+        super(nome, 40, 10, 2);
     }
 
     /*Goblin realiza um ataque:

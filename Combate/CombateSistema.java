@@ -22,51 +22,53 @@ public class CombateSistema
             // Listando as ações que o player pode fazer
             try
             {
-                Thread.sleep(1000);
-                System.out.println("\nSua vez! Escolha uma ação:");
-                System.out.println("1 - Atacar");
-                System.out.println("2 - Habilidade Especial");
-                System.out.println("3 - Usar Item");
-                int acao = sc.nextInt();
-                sc.nextLine();
-
-                Thread.sleep(1000);
-                // Caso escolha atacar
-                if (acao == 1)
+                // Tratar caso usuário digite algo diferente de um int
+                try
                 {
-                    jogador.atacar(inimigo);
-                }
+                    Thread.sleep(1000);
+                    System.out.println("\nSua vez! Escolha uma ação:");
+                    System.out.println("1 - Atacar");
+                    System.out.println("2 - Habilidade Especial");
+                    System.out.println("3 - Usar Item");
+                    int acao = sc.nextInt();
+                    sc.nextLine();
 
-                // Usar habilidade especila -> ULT
-                else if (acao == 2)
-                {
-                    ((Habilidades.HabilidadeEspecial) jogador.getPersonagem()).usarULT(inimigo);
-                }
+                    Thread.sleep(1000);
+                    // Caso escolha atacar
+                    if (acao == 1)
+                    {
+                        jogador.atacar(inimigo);
+                    }
 
-                // Usar item
-                else if (acao == 3)
-                {
-                    try
+                    // Usar habilidade especila -> ULT
+                    else if (acao == 2)
+                    {
+                        ((Habilidades.HabilidadeEspecial) jogador.getPersonagem()).usarULT(inimigo);
+                    }
+
+                    // Usar item
+                    else if (acao == 3)
                     {
                         // O player escolhe o item e usa
                         if(jogador.mostrarInventario())
                         {
-                        System.out.println("Escolha o item:");
-                        int itemIndice = sc.nextInt();
-                        sc.nextLine();
-                        jogador.usarItem(itemIndice);
+                            System.out.println("Escolha o item:");
+                            int itemIndice = sc.nextInt();
+                            sc.nextLine();
+                            jogador.usarItem(itemIndice);
                         }
                     }
-                    catch(Exception e)
+
+                    // Caso a acao nao seja reconhecida
+                    else
                     {
-                        System.out.println("Moio");
+                        System.out.println("Ação inválida!");
                     }
                 }
-
-                // Caso a acao nao seja reconhecida
-                else
+                catch(Exception e)
                 {
-                    System.out.println("Ação inválida!");
+                    System.out.println("Entrada inválida.");
+                    sc.nextLine();
                 }
 
                 // Caso o inimigo morra
